@@ -1,0 +1,15 @@
+---
+# tasks file for hephyvienna.poolaccounts
+- name: Create groups for the poolaccounts
+  group:
+    name: "{{ item.group }}"
+    gid: "{{ item.gid }}"
+  loop: "{{ poolaccounts }}"
+  loop_control:
+    label: "{{ item.group }}"
+
+- name: Create poolaccounts
+  include_tasks: poolaccount.yml
+  loop: "{{ poolaccounts }}"
+  loop_control:
+    loop_var: account

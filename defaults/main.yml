@@ -1,0 +1,5 @@
+---
+# defaults file for hephyvienna.poolaccounts
+
+poolaccounts_homedir: /home
+poolaccounts: []
