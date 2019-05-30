@@ -1,5 +1,5 @@
 ---
-centos7:
+centos6:
   tags:
     - dood
   image: gitlab-registry.cern.ch/hephyvienna/docker/centos7-molecule:latest
