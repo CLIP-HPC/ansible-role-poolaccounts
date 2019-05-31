@@ -24,7 +24,7 @@ centos6:
 
 centos7:
   tags:
-    - hephy
+    - dood
   image: gitlab-registry.cern.ch/hephyvienna/docker/centos7-molecule:latest
   variables:
     ROLE: hephyvienna.poolaccounts
