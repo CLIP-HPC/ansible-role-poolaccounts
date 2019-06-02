@@ -6,18 +6,34 @@ Create pool accounts for WLCG/EGI Grid Site
 ## Role Variables
 
 poolaccounts:
-  - name: 'cms%d.d3'
+  - name: 'cms%03d'
     uid: 10000
     number: 100
     step: 2
     description: 'Standard User of the CMS VO'
-    grp: cms
+    group: cms
     gid: 10000
-  - name: 'cmssgm'
+  - name: 'cmsprd%02d'
     uid: 11000
-    description: 'SW User of the CMS VO'
-    grp: cmsprd
+    number: 10
+    step: 2
+    description: 'Production User of the CMS VO'
+    group: cmsprd
     gid: 11000
+    groups: cms
+  - name: 'cmspil%02d'
+    uid: 12000
+    number: 10
+    step: 2
+    description: 'Pilot User of the CMS VO'
+    group: cmspil
+    gid: 12000
+    groups: cms
+  - name: 'cmssgm'
+    uid: 13000
+    description: 'SW User of the CMS VO'
+    group: cmssgm
+    gid: 13000
     groups: cms
 
 A list of hashes describing the poolaccounts.
@@ -36,31 +52,34 @@ Prefix for the home directory
          - role: hephyvienna.poolaccounts
            vars:
              poolaccounts:
-               - name: 'cms%d.d3'
+               - name: 'cms%03d'
                  uid: 10000
                  number: 100
-                 comment: 'Standard User of the CMS VO'
+                 step: 2
+                 description: 'Standard User of the CMS VO'
                  group: cms
                  gid: 10000
-               - name: 'cmsprd%d.d3'
+               - name: 'cmsprd%02d'
                  uid: 11000
                  number: 10
-                 comment: 'Production User of the CMS VO'
+                 step: 2
+                 description: 'Production User of the CMS VO'
                  group: cmsprd
                  gid: 11000
                  groups: cms
-               - name: 'cmspil%d.d3'
+               - name: 'cmspil%02d'
                  uid: 12000
                  number: 10
-                 comment: 'Pilot User of the CMS VO'
+                 step: 2
+                 description: 'Pilot User of the CMS VO'
                  group: cmspil
-                 gid: 10000
+                 gid: 12000
                  groups: cms
                - name: 'cmssgm'
                  uid: 13000
-                 comment: 'SW User of the CMS VO'
+                 description: 'SW User of the CMS VO'
                  group: cmssgm
-                 gid: 11000
+                 gid: 13000
                  groups: cms
 
 License
