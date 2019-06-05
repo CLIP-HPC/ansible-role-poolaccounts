@@ -27,3 +27,8 @@ script:
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
+  # slack:
+  #   rooms:
+  #     - '<account>:<token>#devops'
+  #   on_success: change # default: always
+  #   on_failure: always # default: always

@@ -1,4 +1,4 @@
-# poolaccounts [![Build Status](https://travis-ci.org/hephyvienna/ansible-role-poolaccounts.svg?branch=master)](https://travis-ci.org/hephyvienna/ansible-role-poolaccounts)![Ansible Role](https://img.shields.io/ansible/role/40961.svg)
+# poolaccounts [![Build Status](https://travis-ci.org/hephyvienna/ansible-role-poolaccounts.svg?branch=master)](https://travis-ci.org/hephyvienna/ansible-role-poolaccounts) ![Ansible Role](https://img.shields.io/ansible/role/40961.svg)
 
 Create Pool Accounts for WLCG/EGI Grid Site
 
