@@ -11,7 +11,7 @@ env:
 
 install:
   # FIXME molecule problem
-  - pip install "ansible==2.8.0" "testinfra==3.0.4"
+  - pip install "ansible==2.7.11"
   # Install test dependencies.
   - pip install molecule docker
 
