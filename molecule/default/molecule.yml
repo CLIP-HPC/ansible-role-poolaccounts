@@ -1,13 +1,16 @@
 ---
 dependency:
   name: galaxy
+  # FIXME for MacOSX
+  options:
+    ignore-certs: true
 driver:
   name: docker
 lint:
   name: yamllint
 platforms:
   - name: instance
-    image: centos:7
+    image: ${MOLECULE_IMAGE:-'centos:7'}
 provisioner:
   name: ansible
   lint:
@@ -15,7 +18,8 @@ provisioner:
 verifier:
   name: testinfra
   options:
+    # FIXME: another workaround for python issue of molecule
     W: ignore::DeprecationWarning
-    junit-xml: ../../default_junit.xml
+    junit-xml: junit.xml
   lint:
     name: flake8

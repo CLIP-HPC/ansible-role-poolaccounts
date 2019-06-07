@@ -22,11 +22,11 @@ def test_hosts_group(host, name, gid):
 
 @pytest.mark.parametrize("name, uid, group, groups", [
     ("cms001",   10000, 'cms',    ['cms']),
-    ("cms100",   10198, 'cms',    ['cms']),
+    ("cms005",   10008, 'cms',    ['cms']),
     ("cmsprd01", 11000, 'cmsprd', ['cmsprd', 'cms']),
-    ("cmsprd10", 11018, 'cmsprd', ['cmsprd', 'cms']),
-    ("cmspil10", 12018, 'cmspil', ['cmspil', 'cms']),
+    ("cmsprd02", 11002, 'cmsprd', ['cmsprd', 'cms']),
     ("cmspil01", 12000, 'cmspil', ['cmspil', 'cms']),
+    ("cmspil02", 12002, 'cmspil', ['cmspil', 'cms']),
     ("cmssgm",   13000, 'cmssgm', ['cmssgm', 'cms']),
 ])
 def test_hosts_user(host, name, uid, group, groups):

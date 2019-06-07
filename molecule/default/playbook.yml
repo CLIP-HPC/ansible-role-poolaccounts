@@ -7,14 +7,14 @@
         poolaccounts:
           - name: 'cms%03d'
             uid: 10000
-            number: 100
+            number: 5
             step: 2
             description: 'Standard User of the CMS VO'
             group: cms
             gid: 10000
           - name: 'cmsprd%02d'
             uid: 11000
-            number: 10
+            number: 2
             step: 2
             description: 'Production User of the CMS VO'
             group: cmsprd
@@ -22,7 +22,7 @@
             groups: cms
           - name: 'cmspil%02d'
             uid: 12000
-            number: 10
+            number: 2
             step: 2
             description: 'Pilot User of the CMS VO'
             group: cmspil
