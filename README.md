@@ -2,7 +2,6 @@
 
 Create Pool Accounts for WLCG/EGI Grid Site
 
-
 *   See old [YAIM Guide](https://twiki.cern.ch/twiki/bin/view/LCG/YaimGuide400#users_conf)
 
 ## Role Variables
