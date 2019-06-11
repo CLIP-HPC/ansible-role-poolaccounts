@@ -1,8 +1,8 @@
 ---
 - name: Converge
   hosts: all
-  
-  before_tasks:
+
+  pre_tasks:
     - name: Install cron
       package:
         name: cronie
