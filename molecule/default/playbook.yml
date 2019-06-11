@@ -1,6 +1,13 @@
 ---
 - name: Converge
   hosts: all
+  
+  before_tasks:
+    - name: Install cron
+      package:
+        name: cronie
+        state: present
+
   roles:
     - role: geerlingguy.repo-epel
     - role: hephyvienna.grid
