@@ -19,11 +19,18 @@
   loop_control:
     loop_var: account
 
-- name: Cleanup grid accounts
+- name: Install grid accounts cleanup
   include_tasks: cleanup-grid-accounts.yml
   when: poolaccounts_enable_cleanup
 
-- name: Enable grid-mapfile
+- name: Configure grid-mapfile
   template:
     src: grid-mapfile.j2
     dest: /etc/grid-security/grid-mapfile
+  when: poolaccounts_enable_grid_mapfile
+
+- name: Configure groupmapfile
+  template:
+    src: groupmapfile.j2
+    dest: /etc/grid-security/groupmapfile
+  when: poolaccounts_enable_groupmapfile

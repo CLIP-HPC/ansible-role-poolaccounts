@@ -9,6 +9,10 @@
           - cms
     - role: hephyvienna.poolaccounts
       vars:
+        poolaccounts_enable_gridmapdir: true
+        poolaccounts_enable_grid_mapfile: true
+        poolaccounts_enable_groupmapfile: true
+        poolaccounts_enable_cleanup: true
         poolaccounts:
           - name: 'cms%03d'
             uid: 10000
