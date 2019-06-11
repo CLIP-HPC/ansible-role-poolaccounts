@@ -59,6 +59,10 @@ Additional settings
 
 Prefix for the home directory
 
+    poolaccounts_enable_cleanup: false
+
+Install and config grid cleanup routines for home directories
+
 
 ## Example Playbook
 

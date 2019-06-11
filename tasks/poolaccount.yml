@@ -13,6 +13,19 @@
     index_var: idx
   when: account.number is defined
 
+- name: Create entry in gridmapdir
+  file:
+    path: "/etc/grid-security/gridmapdir/{{ account.name | format(idx+1) }}"
+    state: touch
+    mode: 0644
+    modification_time: preserve
+    access_time: preserve
+  loop: "{{ range(account.number) | list }}"
+  loop_control:
+    label: "{{ account.name | format(idx+1) }}"
+    index_var: idx
+  when: poolaccounts_enable_gridmapdir and account.number is defined
+
 - name: Create a single user account
   user:
     name: "{{ account.name }}"
@@ -22,3 +35,12 @@
     groups: "{{ account.groups | default([]) }}"
     home: "{{ poolaccounts_homedir + '/' + account.name }}"
   when: account.number is not defined
+
+- name: Create entry in gridmapdir
+  file:
+    path: "/etc/grid-security/gridmapdir/{{ account.name }}"
+    state: touch
+    mode: 0644
+    modification_time: preserve
+    access_time: preserve
+  when: poolaccounts_enable_gridmapdir and account.number is not defined

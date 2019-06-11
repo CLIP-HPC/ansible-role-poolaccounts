@@ -1,0 +1,11 @@
+- name: Install cleanup grid accounts package
+  package:
+    name: cleanup-grid-accounts
+    state: present
+
+- name: Configure cleanup grid accounts package
+  template:
+    src: cleanup-grid-accounts.conf.j2
+    dest: /etc/cleanup-grid-accounts.conf
+
+- name:

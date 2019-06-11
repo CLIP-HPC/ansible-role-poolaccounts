@@ -13,3 +13,7 @@
   loop: "{{ poolaccounts }}"
   loop_control:
     loop_var: account
+
+- name: Cleanup grid accounts
+  include_tasks: cleanup-grid-accounts.yml
+  when: poolaccounst_enable_cleanup
