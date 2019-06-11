@@ -18,14 +18,6 @@
       /usr/sbin/cleanup-grid-accounts.sh 2>&1
       >> /var/log/cleanup-grid-accounts.log
 - name: logrotate for the cron job
-  copy:
-    content: |
-      {{ ansible_managed | comment }}
-      /var/log/cleanup-grid-accounts.log {
-        weekly
-        rotate 30
-        missingok
-        compress
-        copytruncate
-      }
+  template:
+    src: cleanup-grid-accounts.logrotate.j2
     dest: /etc/logrotate.d/cleanup-grid-accounts
