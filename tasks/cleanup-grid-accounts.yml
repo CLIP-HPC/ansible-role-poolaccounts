@@ -12,7 +12,7 @@
 - name: Cron job for account cleanup
   cron:
     name: cleanup grid accounts
-    minute: "{ 59 |random(seed=inventory_hostname) }}"
+    minute: "{{ 59 | random(seed=inventory_hostname) }}"
     hour: "*/6"
     job: >
       /usr/sbin/cleanup-grid-accounts.sh 2>&1
