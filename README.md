@@ -18,6 +18,7 @@ For each group first the correspondig unix grouo mis created and then the user a
 *   _group_ - name of the group
 *   _gid_ - gid of the groups
 *   _groups_ - additional groups of which the accounts are member
+*   _fqan_ - Fully qualified attribute name describing the relevant VOMS role
 
 The example demonstrates the usage. If _number_ is not defined, only
 one account _name_ is created.
@@ -30,6 +31,7 @@ one account _name_ is created.
           description: 'Standard User of the CMS VO'
           group: cms
           gid: 10000
+          fqan: /cms
         - name: 'cmsprd%02d'
           uid: 11000
           number: 10
@@ -38,6 +40,7 @@ one account _name_ is created.
           group: cmsprd
           gid: 11000
           groups: cms
+          fqan: /cms/Role=production
         - name: 'cmspil%02d'
           uid: 12000
           number: 10
@@ -46,12 +49,14 @@ one account _name_ is created.
           group: cmspil
           gid: 12000
           groups: cms
+          fqan: /cms/Role=pilot
         - name: 'cmssgm'
           uid: 13000
           description: 'SW User of the CMS VO'
           group: cmssgm
           gid: 13000
           groups: cms
+          fqan: /cms/Role=lcgadmin
 
 Additional settings
 
@@ -63,6 +68,11 @@ Prefix for the home directory
 
 Install and config grid cleanup routines for home directories
 
+    poolaccounts_enable_gridmapdir: true
+
+Install and config grid cleanup routines for home directories
+
+    poolaccounts_enable_grid-mapfile: true
 
 ## Example Playbook
 

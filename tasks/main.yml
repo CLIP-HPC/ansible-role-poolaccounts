@@ -1,5 +1,10 @@
 ---
 # tasks file for hephyvienna.poolaccounts
+- name: Create gridmapdir
+  file:
+    path: /etc/grid-security/gridmapdir
+    state: directory
+
 - name: Create groups for the poolaccounts
   group:
     name: "{{ item.group }}"
@@ -16,4 +21,9 @@
 
 - name: Cleanup grid accounts
   include_tasks: cleanup-grid-accounts.yml
-  when: poolaccounst_enable_cleanup
+  when: poolaccounts_enable_cleanup
+
+- name: Enable grid-mapfile
+  template:
+    src: grid-mapfile.j2
+    dest: /etc/grid-security/grid-mapfile

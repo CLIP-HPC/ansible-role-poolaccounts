@@ -1,0 +1,8 @@
+{{ ansible_managed | comment }}
+{% for account in poolaccounts %}
+{%   if account.number is defined %}
+"{{ account.fqan }}" .{{ account.group }}
+{%   else %}
+"{{ account.fqan }}" {{ account.name }}
+{%   endif %}
+{% endfor %}

@@ -4,6 +4,7 @@
 poolaccounts_homedir: /home
 poolaccounts: []
 poolaccounts_enable_gridmapdir: true
+poolccounts_enable_grid-mapfile: true
 poolaccounts_enable_cleanup: false
 poolaccounts_cleanup_uid_min: 1000
 poolaccounts_cleanup_verbose: false
