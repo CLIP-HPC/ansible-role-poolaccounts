@@ -1,4 +1,4 @@
-# {{ ansible_managed | comment }}
+{{ ansible_managed | comment }}
 #
 # cleanup-grid-accounts.conf
 #
@@ -27,10 +27,12 @@
 
 # minimum value for a grid account UID (safeguard):
 # UID_MIN=100
+{% if poolaccounts_cleanup_uid_min | default(0) > 0 %}
 UID_MIN={{ poolaccounts_cleanup_uid_min }}
+{% endif %}
 
 # "true" if a verbose log is wanted (option "-v"):
 # VERBOSE=false
-{% if poolaccounts_cleanup_verbose %}
+{% if poolaccounts_cleanup_verbose | default(false) %}
 VERBOSE=true
 {% endif %}
