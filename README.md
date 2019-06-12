@@ -68,11 +68,18 @@ Prefix for the home directory
 
 Install and config grid cleanup routines for home directories
 
-    poolaccounts_enable_gridmapdir: true
+    poolaccounts_enable_gridmapdir: false
 
-Install and config grid cleanup routines for home directories
+Create _gridmapdir_ for administration of grid accounts
 
-    poolaccounts_enable_grid-mapfile: true
+    poolaccounts_enable_grid-mapfile: false
+
+Configure _grid-mapfile_  for mapping of the accounts to VOMS attributes.
+
+    poolaccounts_enable_groupmapfile: false
+
+Configure _groupmapfile_ for mapping the groups to VOMS attributes.
+
 
 ## Example Playbook
 
