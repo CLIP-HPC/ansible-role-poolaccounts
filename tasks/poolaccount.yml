@@ -6,12 +6,12 @@
     uid: "{{ account.uid + idx * (account.step | default(1)) }}"
     group: "{{ account.group }}"
     groups: "{{ account.groups | default([]) }}"
-    home: "{{ poolaccounts_homedir + '/' + (account.name | format(idx) ) }}"
+    home: "{{ poolaccounts_homedir + '/' + (account.name | format(idx+1) ) }}"
   loop: "{{ range(account.number) | list }}"
   loop_control:
     label: "{{ account.name | format(idx+1) }}"
     index_var: idx
-  when: account.number is defined
+  when: account.number is defined and poolaccounts_create_accounts | bool
 
 - name: Create entry in gridmapdir
   file:
@@ -34,7 +34,7 @@
     group: "{{ account.group }}"
     groups: "{{ account.groups | default([]) }}"
     home: "{{ poolaccounts_homedir + '/' + account.name }}"
-  when: account.number is not defined
+  when: account.number is not defined and poolaccounts_create_accounts | bool
 
 - name: Create entry in gridmapdir
   file:
