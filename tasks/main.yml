@@ -11,6 +11,7 @@
     name: "{{ item.group }}"
     gid: "{{ item.gid }}"
   loop: "{{ poolaccounts }}"
+  when: "poolaccounts_create_accounts | bool"
   loop_control:
     label: "{{ item.group }}"
 
@@ -26,8 +27,8 @@
 
 - name: Configure grid-mapfile
   template:
-    src: grid-mapfile.j2
-    dest: /etc/grid-security/grid-mapfile
+    src: voms-mapfile.j2
+    dest: /etc/grid-security/voms-mapfile
   when: poolaccounts_enable_grid_mapfile
 
 - name: Configure groupmapfile
